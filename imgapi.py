@@ -8,7 +8,7 @@ import time
 
 url = "http://127.0.0.1:7860"
 
-with open('E:\\image.jpeg',"rb") as f:
+with open('\\image1.jpeg',"rb") as f:
     global openposeimage
     openposeimage = base64.b64encode(f.read()).decode()
 
@@ -96,12 +96,12 @@ if __name__ == '__main__':
   k=1
   for i in r['images']:
       image = Image.open(io.BytesIO(base64.b64decode(i.split(",", 1)[0])))
-      image.save(f'E:\\output{k}.png')
+      image.save(f'\\output{k}.png')
       k+=1
   print('生成完毕')
   window= tk.Tk()
   window.title('生成结果')
-  image = Image.open('E:\\output1.png')
+  image = Image.open('\\output1.png')
   image = ImageTk.PhotoImage(image)
   label = tk.Label(window, image=image)
   label.pack()
